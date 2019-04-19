@@ -9,7 +9,9 @@ const App = (props) => {
 		<div>
 			{
 				props._isPainted ?
-					<PaintedEgg />
+					<PaintedEgg 
+					paintEgg={props._paintEgg}
+					/>
 					:
 					<NotPaintedEgg
 						paintEgg={props._paintEgg}
@@ -20,11 +22,11 @@ const App = (props) => {
 }
 
 const mapStateToProps = state => ({
-	_isPainted: state.isPainted
+	_isPainted: state.egg.isPainted
 })
 
 const mapDispatchToProps = dispatch => ({
-	_paintEgg: () => dispatch(paintEggActionCreator())
+	_paintEgg: (value) => dispatch(paintEggActionCreator(value))
 })
 
 export default connect(

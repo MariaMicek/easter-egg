@@ -9,6 +9,7 @@ const styles = {
     },
     egg: {
         width: '290px',
+        cursor: 'pointer'
     },
     text: {
         margin: '30px 0',
@@ -33,7 +34,7 @@ const NotPaintedEgg = (props) => {
                 style={styles.egg}
                 src={egg}
                 alt={'Niepomalowane jajko wielkanocne'}
-                onClick={props.paintEgg}
+                onClick={() => props.paintEgg(true)}
             />
         </div>
     )
